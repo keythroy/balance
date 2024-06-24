@@ -37,3 +37,28 @@ class RegisterForm(forms.ModelForm):
             },
         }
         
+class SignInForm(forms.ModelForm):
+    class Meta:
+        model = Register
+        fields = ['email', 'password']
+        widgets = {
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control'}),
+        }
+        required = ['email', 'password']
+        labels = {
+            'email': 'Email',
+            'password': 'Senha',
+        }
+        error_messages = {
+            'email': {
+                'required': 'required',
+                'invalid': 'Email inválido',
+            },
+            'password': {
+                'required': 'required',
+                'max_length': 'Senha muito longa',
+            },
+            
+        }
+        

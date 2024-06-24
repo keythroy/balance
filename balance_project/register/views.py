@@ -1,5 +1,6 @@
 from django.shortcuts import render # type: ignore
-from register.forms import RegisterForm
+from django.shortcuts import redirect # type: ignore
+from register.forms import RegisterForm, SignInForm
 from register.models import Register
 
 
@@ -7,21 +8,25 @@ def dbg(msg):
     print(f':::::balance::::: {msg} ')
 
 def register(request):
-    dbg(f'::Formulário enviado. Request method: {request.method}')
-    print(f'name:   {request.POST}')
+    dbg(f':: Register form. Request method: {request.method}')
+
+    
     success = False
     if request.method == 'POST':
 
         form = RegisterForm(request.POST)
+        message = ''
         if form.is_valid():
             success = True
-            dbg('Formulário válido')
+            dbg('Form valid')
             new_register = form.save()
             new_register.save()
-
+            message = 'User registered successfully'
+            response = redirect('/budget/', message)
+            return response
 
         else:
-            dbg('Formulário inválido')
+            dbg('Form invalid')
             print(form.errors)
        
     else:
@@ -34,4 +39,34 @@ def register(request):
     
 
     return render(request, 'register/sign-up.html', {'form': form})
+
     
+def signin(request):
+    dbg(f':: Register form. Request method: {request.method}')
+
+    
+    success = False
+    if request.method == 'POST':
+
+        form = SignInForm(request.POST)
+        message = ''
+        if form.is_valid():
+            success = True
+            dbg('Form valid')
+            ### login realizado com sucesso
+            
+
+        else:
+            dbg('Form invalid')
+            print(form.errors)
+       
+    else:
+        form = SignInForm()
+    
+    context = {
+        'form': form,
+        'success': success
+    }
+    
+
+    return render(request, 'register/sign-in.html', {'form': form})

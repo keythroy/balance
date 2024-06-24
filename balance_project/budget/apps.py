@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OrcamentoApiConfig(AppConfig):
+class BudgetConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'orcamento_api'
+    name = 'budget'

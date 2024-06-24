@@ -55,7 +55,7 @@
         ["xpath=//form[@id='form']/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "keythroy@gmail.com"
+      "value": "keythroy@usp.com"
     }, {
       "id": "871820e4-4fcf-4cdf-8dc9-71a01219ba0c",
       "comment": "",

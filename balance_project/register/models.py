@@ -13,3 +13,13 @@ class Register(models.Model):
         verbose_name = 'Register'
         verbose_name_plural = 'Registers'
         ordering = ['name']
+
+class SignIn(models.Model):
+    email = models.EmailField()
+    password = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return f'{self.name}[{self.email}]'
+    
+    class Meta:
+        verbose_name = 'SignIn'
