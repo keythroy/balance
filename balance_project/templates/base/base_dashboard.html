@@ -458,6 +458,7 @@
 <script src={% static "/assets/js/plugins/perfect-scrollbar.min.js"%}></script>
 <script src={% static "/assets/js/plugins/smooth-scrollbar.min.js"%}></script>
 <script src={% static "/assets/js/plugins/chartjs.min.js"%}></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 <script>
   var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -468,6 +469,7 @@
   
 
   new Chart(ctx, {
+    plugins: [ChartDataLabels],
     type: "doughnut",
     data: {
       labels: xValues,
@@ -488,9 +490,24 @@
           position: 'left',
           responsive: true,
         },
-        
+        datalabels: {
+          formatter: (value, ctx) => {
+              let sum = 0;
+              let dataArr = ctx.chart.data.datasets[0].data;
+              dataArr.map(data => {
+                  sum += data;
+              });
+              let percentage = (value*100 / sum).toFixed(2)+"%";
+              return percentage;
+          },
+          color: '#344561',
+          font: {
+            //weight: 'bold',
+            size: 12,
+          }
+      }
       },
-    
+      
     }
   });
 </script>
