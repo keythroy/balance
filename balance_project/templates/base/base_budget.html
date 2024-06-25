@@ -23,7 +23,15 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <!--
+  ["#e84fb5", "#8d8be8","#b58c10","#556ff2","#9be09e"];
   
+  <style>
+    .form-control-range-custo-fixo {
+      
+      background-color: #e84fb5;
+    }
+  </style>-->
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -55,7 +63,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1">Orçamento</span>
           </a>
         </li>
         <li class="nav-item">
@@ -75,29 +83,10 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Investimentos</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link  " href={% static "/pages/billing.html"%}>
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>credit-card</title>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                    <g transform="translate(1716.000000, 291.000000)">
-                      <g transform="translate(453.000000, 454.000000)">
-                        <path class="color-background opacity-6" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
-                        <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link  " href={% static "/pages/virtual-reality.html"%}>
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -116,7 +105,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Como trabalhar com o CSV</span>
           </a>
         </li>
         <li class="nav-item">
@@ -137,7 +126,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
+            <span class="nav-link-text ms-1">Configurações</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -161,7 +150,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1">Conta</span>
           </a>
         </li>
         <li class="nav-item">
@@ -181,7 +170,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Login</span>
           </a>
         </li>
         <li class="nav-item">
@@ -203,27 +192,12 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url({% static "/assets/img/curved-images/white-curved.jpg"%})"></div>
-        <div class="card-body text-start p-3 w-100">
-          <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-            <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-          </div>
-          <div class="docs-info">
-            <h6 class="text-white up mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold">Please check our docs</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-          </div>
-        </div>
-      </div>
-      <a class="btn bg-gradient-primary mt-3 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Upgrade to pro</a>
-    </div>
+    
   </aside>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
@@ -464,7 +438,7 @@
 
   var xValues = ["Custo Fixo", "Conforto", "Prazer", "Meta", "Liberdade Financeira"];
   var yValues = [55, 49, 44, 24, 15];
-  var barColors = ["#e84fb5", "#8d8be8","#e8e387","#556ff2","#9be09e"];
+  var barColors = ["#e84fb5", "#8d8be8","#b58c10","#556ff2","#9be09e"];
 
   
 
@@ -500,7 +474,7 @@
               let percentage = (value*100 / sum).toFixed(2)+"%";
               return percentage;
           },
-          color: '#344561',
+          color: '#fff',
           font: {
             //weight: 'bold',
             size: 12,

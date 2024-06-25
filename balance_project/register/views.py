@@ -1,5 +1,4 @@
-from django.shortcuts import render # type: ignore
-from django.shortcuts import redirect # type: ignore
+from django.shortcuts import render, redirect # type: ignore
 from register.forms import RegisterForm, SignInForm
 from register.models import Register
 
@@ -42,7 +41,7 @@ def register(request):
 
     
 def signin(request):
-    dbg(f':: Register form. Request method: {request.method}')
+    dbg(f':: Sign-In Register form. Request method: {request.method}')
 
     
     success = False
@@ -54,7 +53,40 @@ def signin(request):
             success = True
             dbg('Form valid')
             ### login realizado com sucesso
-            
+            response = redirect('/budget/', message)
+            return response
+
+        else:
+            dbg('Form invalid')
+            print(form.errors)
+       
+    else:
+        form = SignInForm()
+    
+    context = {
+        'form': form,
+        'success': success
+    }
+    
+
+    return render(request, 'register/sign-in.html', {'form': form})
+
+
+
+def signup(request):
+    dbg(f':: Sin-Up Register form. Request method: {request.method}')
+
+    
+    success = False
+    if request.method == 'POST':
+
+        form = SignInForm(request.POST)
+        message = ''
+        if form.is_valid():
+            success = True
+            dbg('Form valid')
+            response = redirect('/sining/', message)
+            return response
 
         else:
             dbg('Form invalid')
